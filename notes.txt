@@ -8,5 +8,3 @@ second step: feature extraction
     - a feature extraction algorithm converts an image of some
     fixed size to a vector of some fixed size
 third step: use learning algorithm for classification
-
-will use Historgram of Gradients (HoG) and Support Vector Machine (SVM)
