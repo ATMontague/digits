@@ -1,0 +1,12 @@
+first step: preprocessing
+    - image is altered so as to make feature extraction easier
+second step: feature extraction
+    - input image has too much information, so we strip away and only
+    use important data (sounds like a matrix problem)
+    - examples: Haar-like features, Histogram of Oriented Gradients,
+    Scale-Invariant Feature Transform, Speeded Up Robust Feature
+    - a feature extraction algorithm converts an image of some
+    fixed size to a vector of some fixed size
+third step: use learning algorithm for classification
+
+will use Historgram of Gradients (HoG) and Support Vector Machine (SVM)
