@@ -8,3 +8,5 @@ second step: feature extraction
     - a feature extraction algorithm converts an image of some
     fixed size to a vector of some fixed size
 third step: use learning algorithm for classification
+
+MNIST Data: one image per row, 28x28 pixels so 785 cols
