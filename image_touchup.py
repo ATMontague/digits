@@ -23,5 +23,5 @@ for filename in os.listdir(image_path):
     # create and save new image
     new = Image.new('RGB', img.size)
     new.putdata(new_pixels)
-    name = new_path + filename[:-3] + 'test.png'
+    name = new_path + filename
     new.save(name)
