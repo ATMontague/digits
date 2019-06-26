@@ -2,10 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-def transformation(A):
-    '''simple linear transformation of matrix'''
-    # playing around with simple geometric transformations
-    pass
+path = '/home/adam/Documents/kaggle/digits/data/'
 
 def to_matrix(image_list):
     '''convert list to 2d matrix'''
@@ -19,17 +16,12 @@ def to_matrix(image_list):
         matrix.append(x)
     return matrix
 
-path = '/home/adam/Documents/kaggle/digits/data/'
-train = pd.read_csv(path+'train.csv')
-
-# save label
-target = train['label']
-train = train.drop('label', axis=1)
-
-# get single number
-big_list = []
-for i in range(10):
-    big_list.append(to_matrix(train.iloc[i].tolist()))
-    plt.imshow(big_list[i], cmap='gray')
-    name = 'image_{}.png'.format(i)
-    plt.savefig(path+name, format='png')
+if __name__ == '__main__':
+    train = pd.read_csv(path+'train.csv')
+    # drop label
+    train = train.drop('label', axis=1)
+    for i in range(10):
+        img = to_matrix(train.iloc[i].tolist())
+        plt.imshow(img, cmap='gray')
+        name = 'image_{}.png'.format(i)
+        plt.savefig(path+name, format='png')
