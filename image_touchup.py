@@ -1,12 +1,18 @@
 import os
 from PIL import Image
+import numpy as np
 
 image_path = '/home/adam/Documents/kaggle/digits/generated_images/'
 new_path = '/home/adam/Documents/kaggle/digits/cleaned_images/'
 
-black = (0,0,0)
-white = (255, 255, 255)
-threshold=  (160, 160, 160) # how to determine threshold?
+def threshold(pix):
+    '''perform simple image segmentation'''
+    black = (0,0,0)
+    white = (255, 255, 255)
+    threshold = (160, 160, 160) # how to determine threshold?
+    if pix < threshold:
+        return black
+    return white
 
 def convert():
     for filename in os.listdir(image_path):
@@ -16,10 +22,7 @@ def convert():
 
         new_pixels = []
         for pixel in pixels:
-            if pixel < threshold:
-                new_pixels.append(black)
-            else:
-                new_pixels.append(white)
+            new_pixels.append(threshold(pixel))
 
         # create and save new image
         new = Image.new('RGB', img.size)
