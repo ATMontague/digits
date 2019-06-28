@@ -1,6 +1,8 @@
 import os
 from PIL import Image
 import numpy as np
+import pandas as pd
+import cv2
 
 image_path = '/home/adam/Documents/kaggle/digits/generated_images/'
 new_path = '/home/adam/Documents/kaggle/digits/cleaned_images/'
@@ -30,5 +32,12 @@ def convert():
         name = new_path + filename
         new.save(name)
 
+def remove_islands():
+    img = cv2.imread(new_path+'image_7.png', cv2.IMREAD_GRAYSCALE)
+    print('this should be a 28x28 image')
+    print('image shape: {}'.format(img.shape))
+    print('image size: {}'.format(img.size))
+
 if __name__ == '__main__':
-    convert()
+    #convert()
+    remove_islands()

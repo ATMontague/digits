@@ -17,11 +17,17 @@ def to_matrix(image_list):
         matrix.append(x)
     return matrix
 
+def threshold(x):
+    if x < 160:
+        return 0
+    return 255
+
 if __name__ == '__main__':
     train = pd.read_csv(path+'data/train.csv')
     # drop label
     train = train.drop('label', axis=1)
-    for i in range(10):
+    train = train.applymap(threshold)
+    for i in range(10,15):
         img = to_matrix(train.iloc[i].tolist())
         img = np.array(img)
         #plt.imshow(img, cmap='gray')

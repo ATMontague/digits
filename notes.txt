@@ -10,3 +10,13 @@ second step: feature extraction
 third step: use learning algorithm for classification
 
 MNIST Data: one image per row, 28x28 pixels so 785 cols
+
+would continuity, or lack of, affect ability to recognize?
+    see cleaned image_7 and image_8
+
+most of the pre processing should probably happen only in some vector/matrix
+format
+
+how would you read a png into pandas df like kaggle example data?
+
+image in opencv is just a numpy ndarray?
